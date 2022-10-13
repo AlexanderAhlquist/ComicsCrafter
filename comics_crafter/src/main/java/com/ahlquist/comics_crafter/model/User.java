@@ -2,7 +2,6 @@ package com.ahlquist.comics_crafter.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
 import java.util.Collection;
 
 import javax.persistence.*;
@@ -18,7 +17,7 @@ public class User {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "users_projects", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "user_id"), inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "project_id"))
 	private Collection<Project> projects;
-
+	
 	private String username;
 	private String password;
 	private String email;
