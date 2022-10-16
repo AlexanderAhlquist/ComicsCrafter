@@ -9,12 +9,19 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "Users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer user_id;
+	private Long user_id;
+	
+	@Column(name="user_name")
+	private String username;
+	@Column(name="password")
+	private String password;
+	@Column(name="email")
+	private String email;
 
 	@ManyToMany(fetch =  FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "users_projects", 
@@ -25,11 +32,7 @@ public class User {
 			name = "pro_id", 
 			referencedColumnName = "project_id"))
 	private Collection<Project> projects;
-	
-	private String username;
-	private String password;
-	private String email;
-	public User(Integer user_id, Collection<Project> projects, String username, String password, String email) {
+	public User(Long user_id, Collection<Project> projects, String username, String password, String email) {
 
 		this.user_id = user_id;
 		this.projects = projects;
@@ -44,10 +47,10 @@ public class User {
 		this.email = email;
 	}
 	public User() {};
-	public Integer getUser_id() {
+	public Long getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(Integer user_id) {
+	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
 	public Collection<Project> getProjects() {
