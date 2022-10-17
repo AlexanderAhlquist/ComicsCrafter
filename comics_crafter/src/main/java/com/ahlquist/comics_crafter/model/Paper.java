@@ -12,7 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
+/*
+ * This model represents different types of paper which the users might use in their projects. It has a many to many relationship with projects.
+ */
 @Entity
 @Table
 public class Paper {
@@ -44,6 +46,7 @@ public class Paper {
 	private String feature;
 	private String additionalDescription;
 	private String link_to_vendor;
+	
 	public Paper(Integer paper_id, Collection<Project> projects, Double height, Double width, Double gsm,
 			Double textweight, Double coverweight, Double bond, Integer sheets, String brand, Double price,
 			Double price_per_page, String material, String color, String feature, String additionalDescription,

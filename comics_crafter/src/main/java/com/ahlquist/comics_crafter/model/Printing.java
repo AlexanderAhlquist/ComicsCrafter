@@ -12,7 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
+/*
+ * This model represents the different types of inks the user might use on one of their projects. It has a many to many relationship with projects.
+ */
 @Entity
 @Table
 public class Printing {

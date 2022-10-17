@@ -6,7 +6,9 @@ import javax.persistence.Table;
 import java.util.Collection;
 
 import javax.persistence.*;
-
+/*
+ * This model represents the user data which will be stored on the site. It has a many to many relationship with the project model.
+ */
 
 @Entity
 @Table(name = "Users")

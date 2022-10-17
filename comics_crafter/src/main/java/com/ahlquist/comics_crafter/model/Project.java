@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
+ * This model represents the users project. It has a many to many relationship with Paper, Printing, and User.
+ */
 
 @Entity
 @Table

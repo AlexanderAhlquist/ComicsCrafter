@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.ahlquist.comics_crafter.model.Printing;
-
+//This is the Printing repository.
 @Repository
 public interface PrintingRepository extends JpaRepository<Printing, Integer>{
 
