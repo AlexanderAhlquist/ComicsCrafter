@@ -2,6 +2,7 @@ package com.ahlquist.comics_crafter.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table
 public class Project {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Integer project_id;
 	private Integer pages;
 	private String print_format;

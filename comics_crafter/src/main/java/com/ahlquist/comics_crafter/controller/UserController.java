@@ -18,13 +18,13 @@ public class UserController {
 	private UserService userService;
 
 	@GetMapping("/user_list")
-	public String viewHomePage(Model model) {
+	public String viewUserList(Model model) {
 		model.addAttribute("userList", userService.getAllUsers());
 		return "user_list";
   }
 	
 	@GetMapping("/register_user")
-	public String showNewEmployeeForm(Model model) {
+	public String registerUser(Model model) {
 		User user = new User();
 		model.addAttribute("user", user);
 		return "new_user";
@@ -43,7 +43,7 @@ public class UserController {
 		return "update_user";
 	}
 	@GetMapping("/user_delete/{id}")
-	public String deleteEmployee(@PathVariable(value = "id") Long id) {
+	public String deleteUser(@PathVariable(value = "id") Long id) {
 		this.userService.deleteUserById(id);
 		return "redirect:/user_list";
 	}

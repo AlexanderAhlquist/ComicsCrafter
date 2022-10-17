@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Comics Crafter</title>
+</head>
+<body>
+		<form action='#' th:action="@{/save_project}" th:object="${project}"method="POST">
+			<input type="number" th:field="*{pages}" placeholder = "Pages"> 
+			<input type="text" th:field="*{print_format}" placeholder = "Print Format"> 
+			<input type="text" th:field="*{height}" placeholder = "Height">
+			<input type="text" th:field="*{width}" placeholder = "Width">
+			<input type="text" th:field="*{binding_style}" placeholder = "Binding Style"> 
+			<input type="text" th:field="*{additional_features}" placeholder = "Additional Features"> 
+			<input type="text" th:field="*{description}" placeholder = "Description">
+			<input type="text" th:field="*{sale_price}" placeholder = "Sale Price">
+			<input type="text" th:field="*{cost_to_produce}" placeholder = "Cost to produce"> 
+			<input type="number" th:field="*{completion_status}" placeholder = "Completion Status"/> 
+			<button type="submit">Create New Project</button>
+		</form>
+</body>
+</html>
