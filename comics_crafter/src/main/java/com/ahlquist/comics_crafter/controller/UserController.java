@@ -22,14 +22,12 @@ public class UserController {
 		model.addAttribute("userList", userService.getAllUsers());
 		return "user_list";
   }
-	
 	@GetMapping("/register_user")
 	public String registerUser(Model model) {
 		User user = new User();
 		model.addAttribute("user", user);
 		return "new_user";
 	}
-	
 	@PostMapping("/save_user")
 	public String saveUser(@ModelAttribute("user") User user) {
 		//save employee to database

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Comics Crafter</title>
+</head>
+<body>
+	<div>
+		<h1>New Paper Form</h1>
+		<hr>
+		<h2>Add Paper to Database</h2>
+
+		<form action='#' th:action="@{/save_paper}" th:object="${paper}"method="POST">
+			<input type="text" th:field="*{height}" placeholder="Height"> 
+			<input type="text" th:field="*{width}" placeholder="Width"> 
+			<input type="text" th:field="*{gsm}" placeholder="GSM">
+			<input type="text" th:field="*{textweight}" placeholder="Textweight">
+			<input type="text" th:field="*{coverweight}" placeholder="Coverweight">
+			<input type="text" th:field="*{bond}" placeholder="Bond">
+			<input type="text" th:field="*{sheets}" placeholder="Sheets">
+			<input type="text" th:field="*{brand}" placeholder="Brand">
+			<input type="text" th:field="*{price}" placeholder="Price">
+			<input type="text" th:field="*{price_per_page}" placeholder="Price Per Page">
+			<input type="text" th:field="*{material}" placeholder="Material">
+			<input type="text" th:field="*{color}" placeholder="Color">
+			<input type="text" th:field="*{feature}" placeholder="Feature">
+			<input type="text" th:field="*{additionalDescription}" placeholder="Additional Description">
+			<input type="text" th:field="*{link_to_vendor}" placeholder="Link To Vendor">
+			<button type="submit">Add New Paper to Database</button>
+		</form>
+	</div>
+</body>
+</html>

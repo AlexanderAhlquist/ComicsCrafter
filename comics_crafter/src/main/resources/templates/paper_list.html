@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Comics Crafter</title>
+</head>
+
+<body>
+
+	<div align="center">
+		<h1>Paper List</h1>
+		<a th:href="@{/new_paper}">New Paper Entry</a>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Paper ID</th>
+					<th>Height</th>
+					<th>Width</th>
+					<th>GSM</th>
+					<th>Textweight</th>
+					<th>Coverweight</th>
+					<th>Bond</th>
+					<th>Sheets</th>
+					<th>Brand</th>
+					<th>Price</th>
+					<th>Price Per Page</th>
+					<th>Material</th>
+					<th>Color</th>
+					<th>Feature</th>
+					<th>Additional Description</th>
+					<th>Link to Vendor</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="paper : ${paperList}">
+					<td th:text="${paper.paper_id}"></td>
+					<td th:text="${paper.height}"></td>
+					<td th:text="${paper.width}"></td>
+					<td th:text="${paper.gsm}"></td>
+					<td th:text="${paper.textweight}"></td>
+					<td th:text="${paper.coverweight}"></td>
+					<td th:text="${paper.bond}"></td>
+					<td th:text="${paper.sheets}"></td>
+					<td th:text="${paper.brand}"></td>
+					<td th:text="${paper.price}"></td>
+					<td th:text="${paper.price_per_page}"></td>
+					<td th:text="${paper.material}"></td>
+					<td th:text="${paper.color}"></td>
+					<td th:text="${paper.feature}"></td>
+					<td th:text="${paper.additionalDescription}"></td>
+					<td th:text="${paper.link_to_vendor}"></td>
+					<td><a th:href="@{/paper_update/{id}(id=${paper.paper_id})}">Update</a>
+						<a th:href="@{/paper_delete/{id}(id=${paper.paper_id})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>
