@@ -52,6 +52,7 @@ public class Printing {
 		this.ink_color = ink_color;
 		this.time_per_copy = time_per_copy;
 	}
+	public Printing() {};
 	public Integer getPrinting_process_id() {
 		return printing_process_id;
 	}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Comics Crafter</title>
+</head>
+<body>
+	<div>
+		<h1>New Printing Method</h1>
+		<hr>
+		<h2>New Printing Method</h2>
+
+		<form action='#' th:action="@{/save_printing}" th:object="${printing}"method="POST">
+			<input type="text" th:field="*{ink}" placeholder = "Ink"> 
+			<input type="text" th:field="*{ink_color}" placeholder = "Ink Color"> 
+			<input type="text" th:field="*{time_per_copy}" placeholder = "Time Per Copy">
+			<button type="submit">Update</button>
+		</form>
+	</div>
+</body>
+</html>
