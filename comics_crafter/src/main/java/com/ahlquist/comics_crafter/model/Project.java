@@ -30,6 +30,10 @@ public class Project implements Serializable{
 	
 	@ManyToMany(mappedBy = "projects")
 	private Set<User> users;
+	@ManyToMany(mappedBy = "projects")
+	private Set<Printing> printings;
+	@ManyToMany(mappedBy = "projects")
+	private Set<Paper> papers;
 	
 	public Project(Integer pages, String print_format, Double height, Double width, String binding_style,
 			String additional_features, String description, Double sale_price, Double cost_to_produce,

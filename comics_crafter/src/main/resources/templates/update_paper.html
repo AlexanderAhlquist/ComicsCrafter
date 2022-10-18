@@ -26,6 +26,9 @@
 			<input type="text" th:field="*{feature}">
 			<input type="text" th:field="*{additionalDescription}">
 			<input type="text" th:field="*{link_to_vendor}">
+			<th:block th:each="project : ${listProject}">
+			<input type = "checkbox" th:field="*{projects}" th:text="${project.project_id}" th:value = "${project.project_id}">
+			</th:block>
 			<button type="submit">Edit Paper</button>
 		</form>
 	</div>

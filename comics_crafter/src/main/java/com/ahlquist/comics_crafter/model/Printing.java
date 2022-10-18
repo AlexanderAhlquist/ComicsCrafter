@@ -1,7 +1,7 @@
 package com.ahlquist.comics_crafter.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -35,13 +35,13 @@ public class Printing implements Serializable{
 		inverseJoinColumns = @JoinColumn(
 				name = "pro_id", 
 				referencedColumnName = "project_id"))
-	private Collection<Project> projects;
+	private Set<Project> projects;
 
 	private String ink;
 	private String ink_color;
 	private Double time_per_copy;
 	
-	public Printing(Long printing_process_id, Collection<Project> projects, String ink, String ink_color,
+	public Printing(Long printing_process_id, Set<Project> projects, String ink, String ink_color,
 			Double time_per_copy) {
 		super();
 		this.printing_process_id = printing_process_id;
@@ -63,10 +63,10 @@ public class Printing implements Serializable{
 	public void setPrinting_process_id(Long printing_process_id) {
 		this.printing_process_id = printing_process_id;
 	}
-	public Collection<Project> getProjects() {
+	public Set<Project> getProjects() {
 		return projects;
 	}
-	public void setProjects(Collection<Project> projects) {
+	public void setProjects(Set<Project> projects) {
 		this.projects = projects;
 	}
 	public String getInk() {

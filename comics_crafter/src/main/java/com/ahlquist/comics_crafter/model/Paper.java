@@ -1,7 +1,8 @@
 package com.ahlquist.comics_crafter.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class Paper implements Serializable{
 					name = "pap_id", referencedColumnName = "paper_id"), 
 			inverseJoinColumns = @JoinColumn(
 					name = "pro_id", referencedColumnName = "project_id"))
-	private Collection<Project> projects;
+	private Set<Project> projects;
 	
 	private Double height;
 	private Double width;
@@ -48,7 +49,7 @@ public class Paper implements Serializable{
 	private String additionalDescription;
 	private String link_to_vendor;
 	
-	public Paper(Long paper_id, Collection<Project> projects, Double height, Double width, Double gsm,
+	public Paper(Long paper_id, Set<Project> projects, Double height, Double width, Double gsm,
 			Double textweight, Double coverweight, Double bond, Integer sheets, String brand, Double price,
 			Double price_per_page, String material, String color, String feature, String additionalDescription,
 			String link_to_vendor) {
@@ -78,10 +79,10 @@ public class Paper implements Serializable{
 	public void setPaper_id(Long paper_id) {
 		this.paper_id = paper_id;
 	}
-	public Collection<Project> getProjects() {
+	public Set<Project> getProjects() {
 		return projects;
 	}
-	public void setProjects(Collection<Project> projects) {
+	public void setProjects(Set<Project> projects) {
 		this.projects = projects;
 	}
 	public Double getHeight() {
