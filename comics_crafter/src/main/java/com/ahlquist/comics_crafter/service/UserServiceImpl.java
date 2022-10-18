@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ahlquist.comics_crafter.model.Project;
 import com.ahlquist.comics_crafter.model.User;
+import com.ahlquist.comics_crafter.repository.ProjectRepository;
 import com.ahlquist.comics_crafter.repository.UserRepository;
 /*
  * implements user service allowing for CRUD operations on the service level
@@ -38,7 +40,5 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void deleteUserById(Long user_id) {
 		this.userRepository.deleteById(user_id);
-		
-	}
-	
+	}	
 }

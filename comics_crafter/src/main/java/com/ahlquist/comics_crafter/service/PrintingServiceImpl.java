@@ -23,7 +23,7 @@ public class PrintingServiceImpl implements PrintingService{
 		this.printingRepository.save(printing);
 	}
 	@Override
-	public Printing getPrintingById(Integer printing_id) {
+	public Printing getPrintingById(Long printing_id) {
 		Optional<Printing> optional = printingRepository.findById(printing_id);
 		Printing printing = null;
 		if(optional.isPresent()) {
@@ -34,7 +34,7 @@ public class PrintingServiceImpl implements PrintingService{
 		return printing;
 	}
 	@Override
-	public void deletePrintingById(Integer printing_id) {
+	public void deletePrintingById(Long printing_id) {
 		this.printingRepository.deleteById(printing_id);
 		
 	}

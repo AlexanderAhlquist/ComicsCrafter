@@ -29,7 +29,7 @@ public class PaperServiceImpl implements PaperService {
 	}
 
 	@Override
-	public Paper getPaperById(Integer paper_id) {
+	public Paper getPaperById(Long paper_id) {
 		Optional<Paper> optional = paperRepository.findById(paper_id);
 		Paper paper = null;
 		if (optional.isPresent()) {
@@ -41,7 +41,7 @@ public class PaperServiceImpl implements PaperService {
 	}
 
 	@Override
-	public void deletePaperById(Integer paper_id) {
+	public void deletePaperById(Long paper_id) {
 		this.paperRepository.deleteById(paper_id);
 	}
 }

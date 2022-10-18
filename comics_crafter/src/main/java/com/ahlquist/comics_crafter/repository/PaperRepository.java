@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ahlquist.comics_crafter.model.Paper;
 //This is the Paper repository.
 @Repository
-public interface PaperRepository extends JpaRepository<Paper, Integer>{
+public interface PaperRepository extends JpaRepository<Paper, Long>{
 
 }

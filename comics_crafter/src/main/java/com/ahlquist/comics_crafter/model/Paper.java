@@ -1,7 +1,7 @@
 package com.ahlquist.comics_crafter.model;
 
+import java.io.Serializable;
 import java.util.Collection;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,10 +17,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class Paper {
+public class Paper implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer paper_id;
+	private Long paper_id;
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
@@ -47,7 +48,7 @@ public class Paper {
 	private String additionalDescription;
 	private String link_to_vendor;
 	
-	public Paper(Integer paper_id, Collection<Project> projects, Double height, Double width, Double gsm,
+	public Paper(Long paper_id, Collection<Project> projects, Double height, Double width, Double gsm,
 			Double textweight, Double coverweight, Double bond, Integer sheets, String brand, Double price,
 			Double price_per_page, String material, String color, String feature, String additionalDescription,
 			String link_to_vendor) {
@@ -71,10 +72,10 @@ public class Paper {
 		this.link_to_vendor = link_to_vendor;
 	}
 	public Paper() {}
-	public Integer getPaper_id() {
+	public Long getPaper_id() {
 		return paper_id;
 	}
-	public void setPaper_id(Integer paper_id) {
+	public void setPaper_id(Long paper_id) {
 		this.paper_id = paper_id;
 	}
 	public Collection<Project> getProjects() {

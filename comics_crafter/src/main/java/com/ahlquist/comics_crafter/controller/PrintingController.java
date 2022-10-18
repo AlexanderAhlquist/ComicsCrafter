@@ -41,14 +41,14 @@ public class PrintingController {
 	}
 //Update operation for the Printing table.
 	@GetMapping("/printing_update/{id}")
-	public String printingUpdate(@PathVariable(value="id") Integer printing_id, Model model) {
+	public String printingUpdate(@PathVariable(value="id") Long printing_id, Model model) {
 		Printing printing = printingService.getPrintingById(printing_id);
 		model.addAttribute("printing", printing);
 		return "update_printing";
 	}
 //Delete operation for the Printing table.	
 	@GetMapping("/printing_delete/{id}")
-	public String deletePrinting(@PathVariable(value="id") Integer printing_id) {
+	public String deletePrinting(@PathVariable(value="id") Long printing_id) {
 		this.printingService.deletePrintingById(printing_id);
 		return "redirect:/printing_list";
 	}

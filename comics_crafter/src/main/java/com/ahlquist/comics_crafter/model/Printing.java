@@ -1,5 +1,6 @@
 package com.ahlquist.comics_crafter.model;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -17,10 +18,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class Printing {
+public class Printing implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer printing_process_id;
+	private Long printing_process_id;
 
 	@ManyToMany(
 			fetch = FetchType.EAGER, 
@@ -39,7 +41,7 @@ public class Printing {
 	private String ink_color;
 	private Double time_per_copy;
 	
-	public Printing(Integer printing_process_id, Collection<Project> projects, String ink, String ink_color,
+	public Printing(Long printing_process_id, Collection<Project> projects, String ink, String ink_color,
 			Double time_per_copy) {
 		super();
 		this.printing_process_id = printing_process_id;
@@ -55,10 +57,10 @@ public class Printing {
 		this.time_per_copy = time_per_copy;
 	}
 	public Printing() {};
-	public Integer getPrinting_process_id() {
+	public Long getPrinting_process_id() {
 		return printing_process_id;
 	}
-	public void setPrinting_process_id(Integer printing_process_id) {
+	public void setPrinting_process_id(Long printing_process_id) {
 		this.printing_process_id = printing_process_id;
 	}
 	public Collection<Project> getProjects() {

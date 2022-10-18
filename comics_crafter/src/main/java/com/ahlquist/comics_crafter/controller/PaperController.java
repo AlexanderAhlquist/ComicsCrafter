@@ -41,14 +41,14 @@ public class PaperController {
 	}
 //Update operation for the Paper table.
 	@GetMapping("/paper_update/{id}")
-	public String paperUpdate(@PathVariable(value = "id") Integer id, Model model) {
+	public String paperUpdate(@PathVariable(value = "id") Long id, Model model) {
 		Paper paper = paperService.getPaperById(id);
 		model.addAttribute("paper", paper);
 		return "update_paper";
 	}
 //Delete operation for the Paper table.
 	@GetMapping("/paper_delete/{id}")
-	public String deletePaper(@PathVariable(value = "id") Integer id) {
+	public String deletePaper(@PathVariable(value = "id") Long id) {
 		this.paperService.deletePaperById(id);
 		return "redirect:/paper_list";
 	}

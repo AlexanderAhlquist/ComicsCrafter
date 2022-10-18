@@ -40,14 +40,14 @@ public class ProjectController {
 	}
 //Update operation for the project table.
 	@GetMapping("/project_update/{id}")
-	public String projectUpdate(@PathVariable(value="id") Integer id, Model model) {
+	public String projectUpdate(@PathVariable(value="id") Long id, Model model) {
 		Project project = projectService.getProjectById(id);
 		model.addAttribute("project", project);
 		return "update_project";
 	}
 //Delete operation for the project table.
 	@GetMapping("/project_delete/{id}")
-	public String projectDelete(@PathVariable(value="id") Integer id) {
+	public String projectDelete(@PathVariable(value="id") Long id) {
 		this.projectService.deleteProjectById(id);
 		return "redirect:/project_list";
 	}

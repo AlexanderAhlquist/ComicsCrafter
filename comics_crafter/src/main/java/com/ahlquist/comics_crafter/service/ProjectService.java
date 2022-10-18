@@ -9,6 +9,6 @@ import com.ahlquist.comics_crafter.model.Project;
 public interface ProjectService {
 	List<Project> getAllProjects();
  	void saveProject(Project project);
- 	Project getProjectById(Integer project_id);
- 	void deleteProjectById(Integer project_id);
+ 	Project getProjectById(Long project_id);
+ 	void deleteProjectById(Long project_id);
 }

@@ -29,7 +29,7 @@ public class ProjectServiceImpl implements ProjectService{
 		}
 
 		@Override
-		public Project getProjectById(Integer project_id) {
+		public Project getProjectById(Long project_id) {
 			Optional<Project> optional = projectRepository.findById(project_id);
 			Project project = null;
 			if (optional.isPresent()) {
@@ -41,7 +41,7 @@ public class ProjectServiceImpl implements ProjectService{
 		}
 
 		@Override
-		public void deleteProjectById(Integer project_id) {
+		public void deleteProjectById(Long project_id) {
 			this.projectRepository.deleteById(project_id);
 			
 		}

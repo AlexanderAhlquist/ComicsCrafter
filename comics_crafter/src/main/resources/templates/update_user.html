@@ -15,8 +15,12 @@
 			<input type="text" th:field="*{username}"> 
 			<input type="text" th:field="*{password}"> 
 			<input type="text" th:field="*{email}">
+			<th:block th:each="project : ${listProject}">
+			<input type = "checkbox" th:field="*{projects}" th:text="${project.project_id}" th:value = "${project.project_id}">
+			</th:block>
 			<button type="submit">Update</button>
 		</form>
 	</div>
 </body>
 </html>
+

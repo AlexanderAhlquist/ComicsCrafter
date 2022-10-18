@@ -3,17 +3,20 @@ package com.ahlquist.comics_crafter.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import java.io.Serializable;
 import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.*;
 /*
  * This model represents the user data which will be stored on the site. It has a many to many relationship with the project model.
  */
 
-@Entity
-@Table(name = "Users")
-public class User {
 
+@Entity
+@Table
+public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long user_id;
@@ -25,7 +28,7 @@ public class User {
 	@Column(name="email")
 	private String email;
 
-	@ManyToMany(fetch =  FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch =  FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinTable(name = "users_projects", 
 	joinColumns = @JoinColumn(
 			name = "u_id", 
@@ -33,8 +36,8 @@ public class User {
 	inverseJoinColumns = @JoinColumn(
 			name = "pro_id", 
 			referencedColumnName = "project_id"))
-	private Collection<Project> projects;
-	public User(Long user_id, Collection<Project> projects, String username, String password, String email) {
+	private Set<Project> projects;
+	public User(Long user_id, Set<Project> projects, String username, String password, String email) {
 
 		this.user_id = user_id;
 		this.projects = projects;
@@ -58,7 +61,7 @@ public class User {
 	public Collection<Project> getProjects() {
 		return projects;
 	}
-	public void setProjects(Collection<Project> projects) {
+	public void setProjects(Set<Project> projects) {
 		this.projects = projects;
 	}
 	public String getUsername() {

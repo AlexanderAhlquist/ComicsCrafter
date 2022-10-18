@@ -1,20 +1,22 @@
 package com.ahlquist.comics_crafter.model;
 
+import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-/*
- * This model represents the users project. It has a many to many relationship with Paper, Printing, and User.
- */
 
 @Entity
 @Table
-public class Project {
+public class Project implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private Integer project_id;
+	private Long project_id;
 	private Integer pages;
 	private String print_format;
 	private Double height;
@@ -25,6 +27,9 @@ public class Project {
 	private Double sale_price;
 	private Double cost_to_produce;
 	private Integer completion_status;
+	
+	@ManyToMany(mappedBy = "projects")
+	private Set<User> users;
 	
 	public Project(Integer pages, String print_format, Double height, Double width, String binding_style,
 			String additional_features, String description, Double sale_price, Double cost_to_produce,
@@ -42,10 +47,10 @@ public class Project {
 		this.completion_status = completion_status;
 	}
 	public Project() {}
-	public Integer getProject_id() {
+	public Long getProject_id() {
 		return project_id;
 	}
-	public void setProject_id(Integer project_id) {
+	public void setProject_id(Long project_id) {
 		this.project_id = project_id;
 	}
 	public Integer getPages() {
