@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Comics Crafter</title>
@@ -9,5 +9,13 @@
 	<a href=/project_list>Project List</a>
 	<a href=/paper_list>Paper List</a>
 	<a href=/printing_list>Printing List</a>
+  <div>
+     <p>
+        Currently logged in as <span sec:authentication="principal.username">User</span>
+     </p>
+  </div>
+<form th:action="@{/logout}" method = "POST">
+	<input type = "submit" value = "Logout"/>
+</form>
 </body>
 </html>

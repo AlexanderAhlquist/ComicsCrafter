@@ -69,4 +69,19 @@ public class UserController {
 		model.addAttribute("user", userService.getUserById(id));
 		return "user";
 	}
+
+	@GetMapping("/")
+    public String root() {
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
+    @GetMapping("/user")
+    public String userIndex() {
+        return "user/index";
+    }
 }

@@ -7,4 +7,8 @@ import com.ahlquist.comics_crafter.model.User;
 //This is the User Repository.
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+
+	User findByUsername(String username);
+
+	User findByEmail(String email);
 }

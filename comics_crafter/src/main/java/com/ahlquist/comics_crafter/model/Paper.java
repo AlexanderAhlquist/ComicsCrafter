@@ -51,8 +51,8 @@ public class Paper implements Serializable{
 	
 	public Paper(Long paper_id, Set<Project> projects, Double height, Double width, Double gsm,
 			Double textweight, Double coverweight, Double bond, Integer sheets, String brand, Double price,
-			Double price_per_page, String material, String color, String feature, String additionalDescription,
-			String link_to_vendor) {
+			 String material, String color, String feature, String additionalDescription,
+			String link_to_vendor, Double price_per_page) {
 		super();
 		this.paper_id = paper_id;
 		this.projects = projects;
@@ -65,13 +65,14 @@ public class Paper implements Serializable{
 		this.sheets = sheets;
 		this.brand = brand;
 		this.price = price;
-		this.price_per_page = price_per_page;
+		this.price_per_page= price_per_page;
 		this.material = material;
 		this.color = color;
 		this.feature = feature;
 		this.additionalDescription = additionalDescription;
 		this.link_to_vendor = link_to_vendor;
 	}
+
 	public Paper() {}
 	public Long getPaper_id() {
 		return paper_id;

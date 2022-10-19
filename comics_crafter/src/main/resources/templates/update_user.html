@@ -13,7 +13,7 @@
 		<form action='#' th:action="@{/save_user}" th:object="${user}"method="POST">
 			<input type="hidden" th:field="*{user_id}"/>
 			<input type="text" th:field="*{username}"> 
-			<input type="text" th:field="*{password}"> 
+			<input type="hidden" th:field="*{password}"> 
 			<input type="text" th:field="*{email}">
 			<th:block th:each="project : ${listProject}">
 			<input type = "checkbox" th:field="*{projects}" th:text="${project.project_id}" th:value = "${project.project_id}">

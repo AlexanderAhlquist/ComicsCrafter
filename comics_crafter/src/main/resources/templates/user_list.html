@@ -10,21 +10,22 @@
 	<div align="center">
 	
 		<h1>User List</h1>
-		<a th:href="@{/register_user}">Create New User</a>
 		<table border = "1">
 			<thead>
 				<tr>
+					<th>User project page</th>
+					<th>User Id</th>
 					<th>Username</th>
 					<th>User Email</th>
-					<th>User Password</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="user : ${userList}">
+					<td><a th:href="@{/user/{id}(id=${user.user_id})}">Project Page</a>
+					<td th:text="${user.user_id}"></td>
 					<td th:text="${user.username}"></td>
 					<td th:text="${user.email}"></td>
-					<td th:text="${user.password}"></td>
 					<td><a th:href="@{/user_update/{id}(id=${user.user_id})}">Update</a>
 					<a th:href = "@{/user_delete/{id}(id=${user.user_id})}">Delete</a>
 					</td>
