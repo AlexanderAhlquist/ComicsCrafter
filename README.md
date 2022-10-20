@@ -104,10 +104,9 @@ I think in the future I would definitely implement more of the ideas which I had
 The only extra credit I did was tracking this project using Trello! It was a great way to focus on what I needed to work on for the project, and allowed me to make decisions needed to deliver the minimum viable product! I hope to continue using Trello to work on my project in the future!
 
 ## Final Thoughts
-This project was amazing to work on. I have to give credit to my teacher, Ms. LaTonya Lewis for guiding us through the process from start to finish, and providing us with excellent resources and fantastic teaching. I never thought I would be here months ago, and yet here I am!
+This project was amazing to work on. I have to give credit to my teacher, Ms. LaTonya Lewis for guiding us through the process from start to finish, and providing us with excellent resources and fantastic teaching. I never thought I would be here months ago, and yet here I am! Thank you Per Scholas for this amazing opportunity, and I hope that I get to work with you all again in the future!
 
 
 ### Resources Used
-During this project I relied on some of the Per Scholas projects in order to implement features.
-In particular I would like to note that a lot of my Spring Security is based on the project Lab AC10.1 - Spring Boot + Spring Security + Hibernate + MariaDB(SQL). 
-
+During this project I relied on some of the Per Scholas projects in order to implement some features.
+In particular I would like to note that a lot of my Spring Security is based on the project Lab AC10.1 - Spring Boot + Spring Security + Hibernate + MariaDB(SQL). I did make many modifications to the code in order for it to work with my project.
