@@ -107,4 +107,4 @@ This project was amazing to work on. I have to give credit to my teacher, Ms. La
 
 ### Resources Used
 During this project I relied on some of the Per Scholas projects in order to implement some features.
-In particular I would like to note that a lot of my Spring Security is based on the project Lab AC10.1 - Spring Boot + Spring Security + Hibernate + MariaDB(SQL). I did make many modifications to the code in order for it to work with my project.
+In particular I would like to note that a lot of my Spring Security is based on the project Lab AC10.1 - Spring Boot + Spring Security + Hibernate + MariaDB(SQL). I made modifications to the code in order for it to work with my project, but the design of the security is very much in line with the lab exercise. 
