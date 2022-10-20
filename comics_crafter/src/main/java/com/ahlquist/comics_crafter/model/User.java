@@ -45,6 +45,7 @@ public class User implements Serializable {
 		this.projects = projects;
 		this.roles = roles;
 	}
+	
 
 	public Long getUser_id() {
 		return user_id;

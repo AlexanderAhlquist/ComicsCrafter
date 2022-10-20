@@ -10,7 +10,8 @@ import com.ahlquist.comics_crafter.model.Paper;
 import com.ahlquist.comics_crafter.repository.PaperRepository;
 
 /*
- * this is the implementation of PaperService.
+ * this is the implementation of Paper Service. It allows the controller to 
+ * use all of the CRUD operations.
  */
 @Service
 public class PaperServiceImpl implements PaperService {
