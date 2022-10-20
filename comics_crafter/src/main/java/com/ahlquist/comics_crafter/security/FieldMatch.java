@@ -8,7 +8,10 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
+/*This field match class creates a new annotation which will allow the user registration
+ * to ensure that the fields match between password and confirm password, and 
+ * email and confirm email. It is used in the UserRegistrationDto class.
+ */
 @Target({TYPE, ANNOTATION_TYPE})
 @Retention(RUNTIME)
 @Constraint(validatedBy = FieldMatchValidator.class)

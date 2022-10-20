@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.ahlquist.comics_crafter.model.Printing;
 
+/*
+ * This is the printing service class which allows for CRUD operations at the 
+ * service level.
+ */
 public interface PrintingService {
 	List<Printing> getAllPrinting();
 	void savePrinting(Printing printing);

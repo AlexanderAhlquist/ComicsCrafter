@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import com.ahlquist.comics_crafter.model.Project;
 import com.ahlquist.comics_crafter.repository.ProjectRepository;
 /*
- * implements project service operations allowing for CRUD
+ * implements project service operations allowing for CRUD operations. 
+ * provides methods for the project service interface.
  */
 @Service
 public class ProjectServiceImpl implements ProjectService{

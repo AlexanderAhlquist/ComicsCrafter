@@ -1,5 +1,8 @@
 package com.ahlquist.comics_crafter.model;
 
+/*
+ * This model represents the projects which users can create and manage. 
+ */
 import java.io.Serializable;
 import java.util.Set;
 

@@ -13,6 +13,12 @@ import com.ahlquist.comics_crafter.dto.UserRegistrationDto;
 import com.ahlquist.comics_crafter.model.User;
 import com.ahlquist.comics_crafter.service.UserService;
 
+/*
+ * This is the user registration controller. It protects the user class, and allows for 
+ * the user to register to the site. It has a method which checks if a user 
+ * is already registered with an e-mail, and prevents duplicate emails from registering
+ * under separate accounts.
+ */
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {

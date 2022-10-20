@@ -5,7 +5,11 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import com.ahlquist.comics_crafter.security.FieldMatch;
-
+/*
+ * This is the User Registration DTO. It allows the users data to be transfered to 
+ * the security, ensuring that when a user registers, they confirm both their e-mail
+ * and password. This will prevent users from accidentally registering under the wrong e-mail.
+ */
 @FieldMatch.List({
     @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),
     @FieldMatch(first = "email", second = "confirmEmail", message = "The email fields must match")

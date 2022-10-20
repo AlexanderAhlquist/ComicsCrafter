@@ -12,7 +12,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.ahlquist.comics_crafter.service.UserService;
-
+/*
+ * This class configures the security of the website, allowing for the user to be registered
+ * to the application. This means that the user must register and login before being allowed
+ * to access the rest of the site. 
+ */
 @SuppressWarnings("deprecation")
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -24,7 +28,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
        http
                .authorizeRequests()
                    .antMatchers(
-                           "/registration**").permitAll()
+                           "/registration**",
+                           "/js/**",
+                           "/css/**",
+                           "/webjars/**").permitAll()
                    .anyRequest().authenticated()
                .and()
                    .formLogin()

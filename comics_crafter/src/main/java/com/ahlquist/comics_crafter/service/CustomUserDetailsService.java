@@ -12,7 +12,12 @@ import org.springframework.stereotype.Service;
 import com.ahlquist.comics_crafter.model.User;
 import com.ahlquist.comics_crafter.repository.UserRepository;
 
-
+/*
+ * This class is the service class to the security features on the site. 
+ * This class ensures that the users username is found in the repository. If the 
+ * users email is not found in the database, or if the password is incorrect, it will 
+ * throw an error back to the user.
+ */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 

@@ -1,5 +1,10 @@
 package com.ahlquist.comics_crafter.model;
-
+/*
+ * This model will allow me to create different roles for different users,
+ * such as Administrators, Regular users, and Banned users. 
+ * By creating and assigning these roles, I will be able to create authentication 
+ * that users are not touching parts of the site they are not supposed to.
+ */
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

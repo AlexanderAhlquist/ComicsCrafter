@@ -3,18 +3,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Comics Crafter</title>
+<link href="/css/form.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@300;600&display=swap"
+	rel="stylesheet">
+</head>
 </head>
 <body>
+	<nav>
+			<a href="/">Home</a>
+			<a href="/registration"> Register</a>
+			<a href="/user_list"> User List </a>
+			<a href="/project_list"> Project List </a>
+			<a href="/printing_list"> Printing Methods </a>
+			<a href="/paper_list"> Paper List </a>
+	</nav>
 	<div>
-		<h1>New Printing Method</h1>
-		<hr>
-		<h2>New Printing Method</h2>
-
+			<div id=logo>
+			<h1>The 6th Wall</h1>
+		</div>
 		<form action='#' th:action="@{/save_printing}" th:object="${printing}"method="POST">
+		<u><h1>New Printing Method</h1></u>
+		<h2>New Printing Method</h2>
 			<input type="text" th:field="*{ink}" placeholder = "Ink"> 
 			<input type="text" th:field="*{ink_color}" placeholder = "Ink Color"> 
 			<input type="text" th:field="*{time_per_copy}" placeholder = "Time Per Copy">
-			<button type="submit">Update</button>
+			<div><button type="submit">Update</button></div>
 		</form>
 	</div>
 </body>

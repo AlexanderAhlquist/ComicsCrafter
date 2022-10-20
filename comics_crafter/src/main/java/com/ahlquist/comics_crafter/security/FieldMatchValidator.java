@@ -3,7 +3,10 @@ package com.ahlquist.comics_crafter.security;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import org.apache.commons.beanutils.BeanUtils;
-
+/*This field match validator uses the constraint validator which will allow the registration
+ * to ensure that the fields match between password and confirm password, and 
+ * email and confirm email. It is part of the security configuration.
+ */
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
    private String firstFieldName;
    private String secondFieldName;

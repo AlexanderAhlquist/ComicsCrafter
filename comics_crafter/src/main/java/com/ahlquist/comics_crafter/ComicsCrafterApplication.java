@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*
  * Project by Alexander Ahlquist
+ * Main method class
  */
 @SpringBootApplication
 public class ComicsCrafterApplication {
