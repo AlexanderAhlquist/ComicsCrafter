@@ -22,7 +22,7 @@ I did my best to follow standard naming conventions where possible.
 
 ### 2. Core Java and Models: 16%
 #### a. Utilize Java classes with constant variables (i.e., variables that never change from their initial value). The value of these variables can be requested parameters, SQL queries used in the DAO, names of HTML pages, or URL patterns to forward a request to - 2%.
-All of my controller classes return HTML pages. 
+All of my controller classes return static HTML pages. 
 
 #### b. Have at least four models and corresponding tables in a relational database (if four models/tables do not make sense for your application, discuss this with your instructor) - 12%
 I have five models, Paper, Printing, Project, Role, and User.
