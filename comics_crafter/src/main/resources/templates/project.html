@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Comics Crafter</title>
+<link href="/css/form.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@300;600&display=swap"
+	rel="stylesheet">
+</head>
+
+<body>
+	<nav>
+			<a href="/">Home</a>
+			<a href="/registration"> Register</a>
+			<a href="/user_list"> User List </a>
+			<a href="/project_list"> Project List </a>
+			<a href="/printing_list"> Printing Methods </a>
+			<a href="/paper_list"> Paper List </a>
+	</nav>
+<div id=logo>
+			<h1>The 6th Wall</h1>
+		</div>
+	<div align="center">
+	
+		<h1 th:text="${project.project_id}"></h1>
+		<table border = "1">
+			<thead>
+				<tr>
+					<th>Project Id</th>
+					<th>Pages</th>
+					<th>Print Format</th>
+					<th>Height</th>
+					<th>Width</th>
+					<th>Binding Style</th>
+					<th>Additional Features</th>
+					<th>Description</th>
+					<th>Sale Price</th>
+					<th>Cost to Produce</th>
+					<th>Completion Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${project.project_id}"></td>
+					<td th:text="${project.pages}"></td>
+					<td th:text="${project.print_format}"></td>
+					<td th:text="${project.height}"></td>
+					<td th:text="${project.width}"></td>
+					<td th:text="${project.binding_style}"></td>
+					<td th:text="${project.additional_features}"></td>
+					<td th:text="${project.description}"></td>
+					<td th:text="${project.sale_price}"></td>
+					<td th:text="${project.cost_to_produce}"></td>
+					<td th:text="${project.completion_status}"></td>
+					<td><a th:href="@{/project_update/{id}(id=${project.project_id})}">Update</a>
+					<a th:href = "@{/project_delete/{id}(id=${project.project_id})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Users</h2>
+	<table border = "1">
+			<thead>
+				<tr>
+					<th>User project page</th>
+					<th>User Id</th>
+					<th>Username</th>
+					<th>User Email</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${project.users}">
+					<td><a th:href="@{/user/{id}(id=${user.user_id})}">Project Page</a>
+					<td th:text="${user.user_id}"></td>
+					<td th:text="${user.username}"></td>
+					<td th:text="${user.email}"></td>
+					<td><a th:href="@{/user_update/{id}(id=${user.user_id})}">Update</a>
+					<a th:href = "@{/user_delete/{id}(id=${user.user_id})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Printing Methods</h2>
+	<table border = "1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Ink</th>
+					<th>Ink Color</th>
+					<th>Time Per Copy</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="printing : ${project.printings}">
+					<td th:text="${printing.printing_process_id}"></td>
+					<td th:text="${printing.ink}"></td>
+					<td th:text="${printing.ink_color}"></td>
+					<td th:text="${printing.time_per_copy}"></td>
+					<td><a th:href="@{/printing_update/{id}(id=${printing.printing_process_id})}">Update</a>
+					<a th:href = "@{/printing_delete/{id}(id=${printing.printing_process_id})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Paper</h2>
+	<table border = "1">
+			<thead>
+				<tr>
+					<th>Paper ID</th>
+					<th>Height</th>
+					<th>Width</th>
+					<th>GSM</th>
+					<th>Textweight</th>
+					<th>Coverweight</th>
+					<th>Bond</th>
+					<th>Sheets</th>
+					<th>Brand</th>
+					<th>Price</th>
+					<th>Price Per Page</th>
+					<th>Material</th>
+					<th>Color</th>
+					<th>Feature</th>
+					<th>Additional Description</th>
+					<th>Link to Vendor</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="paper : ${project.papers}">
+					<td th:text="${paper.paper_id}"></td>
+					<td th:text="${paper.height}"></td>
+					<td th:text="${paper.width}"></td>
+					<td th:text="${paper.gsm}"></td>
+					<td th:text="${paper.textweight}"></td>
+					<td th:text="${paper.coverweight}"></td>
+					<td th:text="${paper.bond}"></td>
+					<td th:text="${paper.sheets}"></td>
+					<td th:text="${paper.brand}"></td>
+					<td th:text="${paper.price}"></td>
+					<td th:text="${paper.price_per_page}"></td>
+					<td th:text="${paper.material}"></td>
+					<td th:text="${paper.color}"></td>
+					<td th:text="${paper.feature}"></td>
+					<td th:text="${paper.additionalDescription}"></td>
+					<td th:text="${paper.link_to_vendor}"></td>
+					<td><a th:href="@{/paper_update/{id}(id=${paper.paper_id})}">Update</a>
+						<a th:href="@{/paper_delete/{id}(id=${paper.paper_id})}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

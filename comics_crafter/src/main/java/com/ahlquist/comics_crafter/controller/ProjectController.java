@@ -51,4 +51,9 @@ public class ProjectController {
 		this.projectService.deleteProjectById(id);
 		return "redirect:/project_list";
 	}
+	@GetMapping("/project/{id}")
+	public String getProjectById(@PathVariable(value="id") Long id, Model model) {
+		model.addAttribute("project", projectService.getProjectById(id));
+		return "project";
+	}
 }

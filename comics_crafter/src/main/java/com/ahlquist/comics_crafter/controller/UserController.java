@@ -63,7 +63,7 @@ public class UserController {
 		this.userService.deleteUserById(id);
 		return "redirect:/user_list";
 	}
-	
+
 	@GetMapping("/user/{id}")
 	public String getUserById(@PathVariable(value="id") Long id, Model model) {
 		model.addAttribute("user", userService.getUserById(id));
