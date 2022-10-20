@@ -1,11 +1,9 @@
 # ComicsCrafter
-This is a project to keep track of printed projects, and the estimated costs and where to purchase papers.
+The goal of this project was to create something useful to my fiancee. They are a comic book creator by trade, but being a comic book creator does not make you a financial saavant. She explained to me that she needed to reprint her comics, but had no idea what paper she had used to print them out. I took that idea and ran with it! My goal was to create a website which could take a comic project, and allow a user to easily track which paper they used for what project. This project is far from done, and only has the very basic implementation complete, but it is definitely a project I want to sink more time into to make more useful! I want this to be something that I can be proud of!
 
-This is the largest project I've ever attempted.
+This project was done as part of the Per Scholas fellowship as a capstone project. The course was a Full-Stack Java Engineering program, and, well... Here's the full stack project I made! From front-end to back-end, it actually connects! A few months ago I could never dream of making something like this, but thanks to a lot of hard work and effort, I've made something that I'm proud of. 
 
-The goal is to create a usable database that users can add, delete, and modify information about the costs associated with printing, and then have the site automatically calculate the costs associated with printing their comics projects. 
-
-The backend of this project will be using MariaDB, and Java. The frontend is HTML, CSS, and Javascript. The project was assembled as a Maven project using Spring Boot.
+The backend of this project will be using Java and MariaDb. The frontend is HTML, CSS, and Javascript. The project was assembled as a Maven project using Spring Boot.
 
 ## Project Requirements
 ### 1. Project Structure, Standardization and Conventions 12%
