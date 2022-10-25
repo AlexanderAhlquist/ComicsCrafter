@@ -32,6 +32,7 @@
 		<table border = "1">
 			<thead>
 				<tr>
+					<th>Project Page</th>
 					<th>Project Id</th>
 					<th>Pages</th>
 					<th>Print Format</th>
@@ -48,6 +49,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="project : ${projectList}">
+					<td><a th:href="@{/project/{id}(id=${project.project_id})}">Project Page</a>
 					<td th:text="${project.project_id}"></td>
 					<td th:text="${project.pages}"></td>
 					<td th:text="${project.print_format}"></td>

@@ -120,6 +120,25 @@ public class Project implements Serializable{
 	public void setCompletion_status(Integer completion_status) {
 		this.completion_status = completion_status;
 	}
+	
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+	public Set<Printing> getPrintings() {
+		return printings;
+	}
+	public void setPrintings(Set<Printing> printings) {
+		this.printings = printings;
+	}
+	public Set<Paper> getPapers() {
+		return papers;
+	}
+	public void setPapers(Set<Paper> papers) {
+		this.papers = papers;
+	}
 	@Override
 	public String toString() {
 		return "Project [project_id=" + project_id + ", pages=" + pages + ", print_format=" + print_format + ", height="
