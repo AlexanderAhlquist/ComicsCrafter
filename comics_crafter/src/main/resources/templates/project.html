@@ -165,7 +165,7 @@
 		<tbody>
 			<tr th:each="paper : ${project.papers}">
 				<td th:text="${paper.paper_id}"></td>
-				<td th:text="${(paper.price/paper.sheets)*project.pages}"></td>
+				<td th:text="${#numbers.formatDecimal(((paper.price/paper.sheets)*project.pages), 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
 			</tr>
 		</tbody>
 		</table>
