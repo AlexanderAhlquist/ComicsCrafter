@@ -1,0 +1,158 @@
+2022-11-07 11:49:44 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - Starting ComicsCrafterApplication using Java 17.0.4.1 on DESKTOP-ITAA80Q with PID 25064 (C:\Users\ahlqu\OneDrive\Desktop\ComicsCrafter\comics_crafter\comics_crafter\target\classes started by ahlqu in C:\Users\ahlqu\OneDrive\Desktop\ComicsCrafter\comics_crafter\comics_crafter)
+2022-11-07 11:49:44 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - No active profile set, falling back to 1 default profile: "default"
+2022-11-07 11:49:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-07 11:49:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-07 11:49:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-07 11:49:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2022-11-07 11:49:46 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c1c5863c-d6a3-3dcd-91f4-5a64f9f83bc9
+2022-11-07 11:49:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-11-07 11:49:46 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-11-07 11:49:46 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-11-07 11:49:46 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-11-07 11:49:46 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1723 ms
+2022-11-07 11:49:46 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-07 11:49:47 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-11-07 11:49:47 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-07 11:49:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-11-07 11:49:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-11-07 11:49:47 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add column pap_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add column pro_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add column pri_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add column pro_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - create table role (id bigint not null, name varchar(255), primary key (id)) engine=InnoDB
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add column u_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add column pro_id bigint not null
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - create table users_roles (user_id bigint not null, role_id bigint not null) engine=InnoDB
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add constraint FKo3cbaidea3usg6mo8voqd0suc foreign key (pro_id) references project (project_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add constraint FKhsiwgq77inuglgyw4aymie5p8 foreign key (pap_id) references paper (paper_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add constraint FK9qbip6iiwpnoti23ysej4b8pt foreign key (pro_id) references project (project_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add constraint FKil0m4l83akmxyt2yatra9haap foreign key (pri_id) references printing (printing_process_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add constraint FKf1loykyevwhfd53jt92ih8211 foreign key (pro_id) references project (project_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add constraint FK2o8ycp6dp2kkc5d5bpa47u49c foreign key (u_id) references user (user_id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_roles add constraint FKt4v0rrweyk393bdgt107vdx0x foreign key (role_id) references role (id)
+2022-11-07 11:49:48 [restartedMain] DEBUG org.hibernate.SQL - alter table users_roles add constraint FKgd3iendaoyh04b95ykqise6qh foreign key (user_id) references user (user_id)
+2022-11-07 11:49:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1005-HY000: Can't create table `comicscrafter`.`users_roles` (errno: 150 "Foreign key constraint is incorrectly formed")
+2022-11-07 11:49:48 [restartedMain] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "alter table users_roles add constraint FKgd3iendaoyh04b95ykqise6qh foreign key (user_id) references user (user_id)" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table users_roles add constraint FKgd3iendaoyh04b95ykqise6qh foreign key (user_id) references user (user_id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.ahlquist.comics_crafter.ComicsCrafterApplication.main(ComicsCrafterApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.sql.SQLException: (conn=4966) Can't create table `comicscrafter`.`users_roles` (errno: 150 "Foreign key constraint is incorrectly formed")
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:299)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:137)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:840)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:779)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:698)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:641)
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:935)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1061)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:452)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 38 common frames omitted
+2022-11-07 11:49:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-07 11:49:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-07 11:49:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-07 11:49:49 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-11-07 11:49:49 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@574ca741, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bc7c788, org.springframework.security.web.context.SecurityContextPersistenceFilter@499d70eb, org.springframework.security.web.header.HeaderWriterFilter@520e2ec5, org.springframework.security.web.csrf.CsrfFilter@5f746aa0, org.springframework.security.web.authentication.logout.LogoutFilter@71e18700, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@14f9c956, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c4454b6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64837d73, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e5c7d5e, org.springframework.security.web.session.SessionManagementFilter@4ef5a8be, org.springframework.security.web.access.ExceptionTranslationFilter@17cb944d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@30bd131b]
+2022-11-07 11:49:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-11-07 11:49:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-07 11:49:50 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - Started ComicsCrafterApplication in 5.901 seconds (JVM running for 6.721)
+2022-11-07 11:50:11 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2022-11-07 11:50:11 [RMI TCP Connection(8)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-11-07 11:50:11 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-07 11:50:11 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-11-07 11:50:11 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-11-07 11:50:26 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - Starting ComicsCrafterApplication using Java 17.0.4.1 on DESKTOP-ITAA80Q with PID 24556 (C:\Users\ahlqu\OneDrive\Desktop\ComicsCrafter\comics_crafter\comics_crafter\target\classes started by ahlqu in C:\Users\ahlqu\OneDrive\Desktop\ComicsCrafter\comics_crafter\comics_crafter)
+2022-11-07 11:50:26 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - No active profile set, falling back to 1 default profile: "default"
+2022-11-07 11:50:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-07 11:50:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-07 11:50:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-07 11:50:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2022-11-07 11:50:27 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c1c5863c-d6a3-3dcd-91f4-5a64f9f83bc9
+2022-11-07 11:50:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-11-07 11:50:27 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-11-07 11:50:27 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-11-07 11:50:27 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-11-07 11:50:27 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1757 ms
+2022-11-07 11:50:28 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-07 11:50:28 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-11-07 11:50:28 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-07 11:50:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-11-07 11:50:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-11-07 11:50:28 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table paper (paper_id bigint not null, additional_description varchar(255), bond double precision, brand varchar(255), color varchar(255), coverweight double precision, feature varchar(255), gsm double precision, height double precision, link_to_vendor varchar(255), material varchar(255), price double precision, price_per_page double precision, sheets integer, textweight double precision, width double precision, primary key (paper_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table papers_projects (pap_id bigint not null, pro_id bigint not null, primary key (pap_id, pro_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table printing (printing_process_id bigint not null, ink varchar(255), ink_color varchar(255), time_per_copy double precision, primary key (printing_process_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table printing_projects (pri_id bigint not null, pro_id bigint not null, primary key (pri_id, pro_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table project (project_id bigint not null, additional_features varchar(255), binding_style varchar(255), completion_status integer, cost_to_produce double precision, description varchar(255), height double precision, pages integer, print_format varchar(255), sale_price double precision, width double precision, primary key (project_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table role (id bigint not null, name varchar(255), primary key (id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table user (user_id bigint not null, email varchar(255), password varchar(255), username varchar(255), primary key (user_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table users_projects (u_id bigint not null, pro_id bigint not null, primary key (u_id, pro_id)) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - create table users_roles (user_id bigint not null, role_id bigint not null) engine=InnoDB
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add constraint FKo3cbaidea3usg6mo8voqd0suc foreign key (pro_id) references project (project_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table papers_projects add constraint FKhsiwgq77inuglgyw4aymie5p8 foreign key (pap_id) references paper (paper_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add constraint FK9qbip6iiwpnoti23ysej4b8pt foreign key (pro_id) references project (project_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table printing_projects add constraint FKil0m4l83akmxyt2yatra9haap foreign key (pri_id) references printing (printing_process_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add constraint FKf1loykyevwhfd53jt92ih8211 foreign key (pro_id) references project (project_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table users_projects add constraint FK2o8ycp6dp2kkc5d5bpa47u49c foreign key (u_id) references user (user_id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table users_roles add constraint FKt4v0rrweyk393bdgt107vdx0x foreign key (role_id) references role (id)
+2022-11-07 11:50:29 [restartedMain] DEBUG org.hibernate.SQL - alter table users_roles add constraint FKgd3iendaoyh04b95ykqise6qh foreign key (user_id) references user (user_id)
+2022-11-07 11:50:29 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-07 11:50:29 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-07 11:50:29 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-07 11:50:30 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-11-07 11:50:31 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@740d0159, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67712b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f9b8a0b, org.springframework.security.web.header.HeaderWriterFilter@6d1b8302, org.springframework.security.web.csrf.CsrfFilter@6a7246d0, org.springframework.security.web.authentication.logout.LogoutFilter@2398076a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2c873df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a16af91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@deec322, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@550581b1, org.springframework.security.web.session.SessionManagementFilter@244ea08c, org.springframework.security.web.access.ExceptionTranslationFilter@49873be4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13d19737]
+2022-11-07 11:50:31 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-11-07 11:50:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-07 11:50:31 [restartedMain] INFO  c.a.c.ComicsCrafterApplication - Started ComicsCrafterApplication in 5.877 seconds (JVM running for 6.728)
+2022-11-07 11:50:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-07 11:50:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-11-07 11:50:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-11-07 11:50:42 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
